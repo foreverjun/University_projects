@@ -1,0 +1,14 @@
+name: Experiment with parallel version
+on: pull_request
+jobs:
+  experiment:
+    runs-on: ubuntu-latest
+    container: gcc:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: |
+          ./scripts/build.sh
+      - name: Experiment
+        run: |
+          ./scripts/experiment.sh

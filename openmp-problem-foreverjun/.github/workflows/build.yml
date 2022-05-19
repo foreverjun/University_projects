@@ -1,0 +1,11 @@
+name: Build without test
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: gcc:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: |
+          ./scripts/build.sh
